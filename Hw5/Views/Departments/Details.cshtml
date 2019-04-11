@@ -1,0 +1,48 @@
+﻿
+@model Hw5.Models.Department
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+<section class="ab-info-main py-5">
+    <div class="container py-lg-3">
+        <div class="ab-info-grids">
+            <div>
+                <h4>Department  - @Model.Dname</h4>
+                <hr />
+                @foreach (var student in Model.Students)
+
+                {<div class="item col-lg-4">
+                        <div class="thumbnail card">
+                            <div class="img-event">
+                                @*<img class="group list-group-image img-fluid" src="~/uploads/@student.ImageUrl" alt="" />*@
+                            </div>
+                            <dl class="row">
+                                <dt class="col-sm-2">
+
+                                    @student.Name  @student.Surname
+
+                                </dt>
+
+                            </dl>
+
+                        </div>
+                        <div class="col-6">
+
+                        </div>
+                    </div>
+                }
+
+
+
+                <div>
+                    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+                    <a asp-action="Index">Back to List</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>

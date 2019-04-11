@@ -1,0 +1,60 @@
+﻿@model Student
+@{
+    ViewData["Title"] = "Information";
+}
+
+<h1>Student Information</h1>
+
+<section class="ab-info-main py-md-5">
+    <div class="container">
+        <div class="row mt-lg-5 mt-4">
+            <div class="col-md-12 events-img">
+                <img src="~/uploads/@Model.ImageUrl" class="img-fluid" alt="user-image" />
+            </div>
+            <div class="col-md-12 events-info my-3">
+                @*@Html.Raw(Model.CV.Replace(System.Environment.NewLine, "<br />"))*@
+            </div>
+        </div>
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.CV)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.CV)
+            </dd>
+            <dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Name)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Name)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Surname)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Surname)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Email)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Email)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Department)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Department.Dname)
+            </dd>
+        </dl>
+        <a asp-controller="Students" asp-action="Edit" asp-route-Id="@Model.Id" class="btn btn-primary">Edit</a>
+        &nbsp;
+        &nbsp;
+
+        <a asp-controller="Students" asp-action="Delete" asp-route-Id="@Model.Id" class="btn btn-primary">Delete</a>
+    </div>
+
+</section>
+
+
